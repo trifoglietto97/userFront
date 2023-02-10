@@ -9,12 +9,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 
-import {httpInterceptorProviders} from "./interceptor/auth.interceptor";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import {DataTablesModule} from "angular-datatables";
+import {HttpRequestIntercepotor} from "./interceptor/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import {DataTablesModule} from "angular-datatables";
     AppRoutingModule,
     DataTablesModule
   ],
-  providers: [httpInterceptorProviders],
+  providers: [  { provide: HTTP_INTERCEPTORS, useClass: HttpRequestIntercepotor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from "rxjs";
+
 
 @Component({
   selector: 'app-board-user',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./board-user.component.css']
 })
 export class BoardUserComponent {
+
 
 }

@@ -14,6 +14,4 @@ export class HttpRequestIntercepotor implements HttpInterceptor{
    //handle(req) trasforma httpRequest oggetto in un file Observable<httpEvents>, next rappresenta l'ultimo intercettore
 }
 
-export const httpInterceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, userClass: HttpRequestIntercepotor, multi: true},
-];
+
